@@ -17,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/**
+ * para la inscripcion
+ */
+Route::post('inscripcion', [
+    'uses'  => 'App\Http\Controllers\InscripcionController@storeKardex',
+    'as'    => 'api.inscripcion.storeKardex'
+]);
+
+Route::get('horarios', [
+    'uses'  => 'App\Http\Controllers\InscripcionController@getHorarios',
+    'as'    => 'api.inscripcion.getHorarios'
+]);
