@@ -27,10 +27,10 @@
 .navbar-toggler-icon{
     background-image: url("../imagenes/icono/menu.png");
 }
-ul a h5{
+ul a h6{
     color:   #e3e3e4;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 nav .nav-espacio{
     text-align: center;
@@ -352,4 +352,23 @@ th.table-color5{
 #contacto{
     background: #052433;
     color: #ffff;
+}
+/*Call of paper*/
+.colf{
+    background-image: linear-gradient(135deg, #052433 0%,#1baa7b 50%);
+    margin: 2%; 
+    padding: 1%;
+    border-radius: 15px;
+    color: #052433;
+}
+.colf span{
+    background-color: #36C6E3 ;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 2%;
+    padding-left: 15%;
+    font-size: 20px;
+    font-weight: 500;
 }

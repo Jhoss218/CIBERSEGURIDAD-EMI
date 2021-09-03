@@ -19,20 +19,21 @@
     <nav class="navbar sticky-top  navbar-expand-xl color-nav">
       <div class="container-fluid">
         <a class="navbar-brand">
-          <img src="imagenes/logo.png" alt="" class="img-fluid" width="300px">
+          <img src="imagenes/logo.png" alt="" class="img-fluid" width="200">
+          <img src="imagenes/icono/logoEMI.png" alt="" class="img-fluid" width="130">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-espacio">
-                <a class="nav-item nav-link active" aria-current="page" href="#informacion"><h5>INFORMACIÓN</h5> </a>
-                <a class="nav-item nav-link" href="#colforpaper"><h5>COLFORPAPER</h5></a>
-                <a class="nav-item nav-link" href="#conferencista"><h5>CONFERENCISTAS</h5></a>
-                <a class="nav-item nav-link" href="#agenda"><h5>AGENDA</h5></a>
-                <a class="nav-item nav-link" href="#patrocinador"><h5>AUSPICIAN</h5></a>
+                <a class="nav-item nav-link active" aria-current="page" href="#informacion"><h6>INFORMACIÓN</h6> </a>
+                <a class="nav-item nav-link" href="#colforpaper"><h6>CALL FOR PAPERS</h6></a>
+                <a class="nav-item nav-link" href="#conferencista"><h6>CONFERENCISTAS</h6></a>
+                <a class="nav-item nav-link" href="#agenda"><h6>AGENDA</h6></a>
+                <a class="nav-item nav-link" href="#patrocinador"><h6>AUSPICIAN</h6></a>
                 
-                <a class="nav-item nav-link" href="#contacto"><h5>CONTACTO</h5></a>
+                <a class="nav-item nav-link" href="#contacto"><h6>CONTACTO</h6></a>
                 <li><a href="index.php #formulario"><input type="button" class="boton1" data-bs-toggle="modal" data-bs-target="#formulario" value="INSCRIBIRSE"></a></li>
             </ul>
         </div>
@@ -45,6 +46,7 @@
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
                 </div>
                 <div class="carousel-inner ">
                     <div class="carousel-item active">
@@ -102,9 +104,6 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-        </section>
-        <section  id="informacion" name="informacion">
-
         </section>
         <section id="contenido" name="contenido">
             <div class="contenedorT">
@@ -205,7 +204,7 @@
                                 <div class="card" id="contenido-hover">
                                     <div class="card-body">
                                         <img src="imagenes/contenido/junior.jpg" alt="" width="165" height="165" style="margin-bottom:10%" class="img-fluid rounded-circle" id="img-contenido">
-                                        <h3><strong>Junior Siberseguridad</strong></h3>
+                                        <h3><strong>Junior Ciberseguridad</strong></h3>
                                             
                                     </div>
                                 </div>
@@ -219,7 +218,58 @@
         <section id="colforpaper" name="colforpaper">
             <div class="contenedorT">
                 <div class="container">
-                    <h1 class="subtitulo text-center"><strong>COLFORPAPER</strong></h1>
+                    <h1 class="subtitulo text-center"><strong>CALL FOR PAPERS</strong></h1>
+                    <div class="row centrado-con">
+                        <div class="col-5">
+                            <img src="imagenes/call.jpeg" alt="" height="350" width="350" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="col-6">
+                            <div class="row justify-content-start">
+                                <div class="col-8 colf">
+                                    <div class="row text-center">
+                                        <div class="col-3 ">
+                                            <span>  1</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h3><strong>Categoría A</strong></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-end">
+                                <div class="col-8 colf">
+                                    <div class="row text-center">
+                                        <div class="col-3 ">
+                                            <span>  2</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h3><strong>Categoría B</strong></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-start">
+                                <div class="col-8 colf">
+                                    <div class="row text-center">
+                                        <div class="col-3 ">
+                                            <span>  2</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <h3><strong>Categoría C</strong></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row centrado-con" style="margin: 3%">
+                            <div class="col-2">
+                                <img src="imagenes/icono/calendario.png" width="50" height="50" alt="">
+                            </div>
+                            <div class="col-9">
+                                <h4 style="color: #1baa7b"><strong>Fecha de inicio - Fecha de cierre</strong></h4>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -232,15 +282,15 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="card">
-                                    <img src="imagenes/conferencista/conferencista1.png" alt="" class="imgP">
+                                    <img src="imagenes/conferencista/PERSONA.png" alt="" class="imgP">
                                     <div class="row align-items-end">
                                         <div class="col-3 text-center centrado-con redondo">
                                             <img src="imagenes/banderas/bbolivia.png" alt="">
                                         </div>
                                     </div>
                                     <div class="card-body body-conf">
-                                        <h2>Luis Fernando Zegarra Castro</h2>
-                                        <p>ABOGADO</p>
+                                        <h2>Nombre Completo</h2>
+                                        <p>Profesión</p>
                                         <input type="button" data-bs-toggle="modal" href="#conferencista1" value="Ver mas" class="boton1">
                                     </div>
                                     <div class="card-stats">
@@ -259,15 +309,15 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="card">
-                                    <img src="imagenes/conferencista/conferencista2.png" alt="" class="imgP">
+                                    <img src="imagenes/conferencista/PERSONA.png" alt="" class="imgP">
                                     <div class="row align-items-end">
                                         <div class="col-3 text-center centrado-con redondo">
                                             <img src="imagenes/banderas/bbolivia.png" alt="">
                                         </div>
                                     </div>
                                     <div class="card-body body-conf">
-                                        <h2>F. Fabian Espinoza Valencia</h2>
-                                        <p>ABOGADO</p>
+                                        <h2>Nombre Completo</h2>
+                                        <p>Profesión</p>
                                         <input type="button" data-bs-toggle="modal" href="#conferencista1" value="Ver mas" class="boton1">
                                     </div>
                                     <div class="card-stats">
@@ -285,15 +335,15 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="card">
-                                    <img src="imagenes/conferencista/conferencista1.png" alt="" class="imgP">
+                                    <img src="imagenes/conferencista/PERSONA.png" alt="" class="imgP">
                                     <div class="row align-items-end">
                                         <div class="col-3 text-center centrado-con redondo">
                                             <img src="imagenes/banderas/bbolivia.png" alt="">
                                         </div>
                                     </div>
                                     <div class="card-body body-conf">
-                                        <h2>Luis Fernando Zegarra Castro</h2>
-                                        <p>ABOGADO</p>
+                                        <h2>Nombre Completo</h2>
+                                        <p>Profesión</p>
                                         <input type="button" data-bs-toggle="modal" href="#conferencista1" value="Ver mas" class="boton1">
                                     </div>
                                     <div class="card-stats">
@@ -311,15 +361,15 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="card">
-                                    <img src="imagenes/conferencista/conferencista2.png" alt="" class="imgP">
+                                    <img src="imagenes/conferencista/PERSONA.png" alt="" class="imgP">
                                     <div class="row align-items-end">
                                         <div class="col-3 text-center centrado-con redondo">
                                             <img src="imagenes/banderas/bbolivia.png" alt="">
                                         </div>
                                     </div>
                                     <div class="card-body body-conf">
-                                        <h2>F. Fabian Espinoza Valencia</h2>
-                                        <p>ABOGADO</p>
+                                    <h2>Nombre Completo</h2>
+                                        <p>Profesión</p>
                                         <input type="button" data-bs-toggle="modal" href="#conferencista1" value="Ver mas" class="boton1">
                                     </div>
                                     <div class="card-stats">
@@ -353,7 +403,7 @@
                                 <div class="row">
                                     <div class="col-md-5 fondo">
                                         <div class="row justify-content-center margen">
-                                            <img src="imagenes/conferencista/conferencista1.png" alt="" class="rounded-circle centrado-con  ">
+                                            <img src="imagenes/conferencista/PERSONA.png" alt="" class="rounded-circle centrado-con  ">
                                         </div>
                                         <div class="row  margen" >
                                             <h4 style="color: #ffff;"><strong>PERFIL</strong></h4>
@@ -685,13 +735,14 @@
         </section>
         
         <section id="contacto" name="contacto">
+            <div class="contenedorT" style="">
                 <div class="container">
                     <h1 class="titulo text-center"><strong>CONTACTO</strong></h1>
                     <div class="row align-items-center justify-content-around">
                         <div class="col-3">
                             <img src="imagenes/logo.png" height="20%" class="img-fluid" alt="">
                         </div>
-                        <div class="col-5">
+                        <div class="col-4">
                             <h5><strong> <img src="imagenes/icono/gmail.png" alt="" width="30"> Email: </strong>infocongreso@adm.emi.edu.bo</h5>
                             <h5><strong> <img src="imagenes/icono/gmail.png" alt="" width="30"> Email:</strong>papercongreso@adm.emi.edu.bo</h5>
                             
@@ -702,7 +753,7 @@
                         </div>
                     </div>
                 </div>
-           
+                </div>
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
