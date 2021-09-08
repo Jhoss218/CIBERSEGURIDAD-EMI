@@ -15,7 +15,7 @@
 .contenedorT{
     padding: 60px 0; /*para que haya un espacio entre secciones*/
     overflow: hidden; /*si algo se sale se esconda*/
-    /*margin: 0 10% 0 10%;*/
+    margin: 0 10% 0 10%;
 }
  /* NAVBAR*/
 .color-nav{
@@ -371,4 +371,23 @@ th.table-color5{
     padding-left: 15%;
     font-size: 20px;
     font-weight: 500;
+}
+
+/*Formulario*/
+
+body#form{
+    background-image: url('../imagenes/fondo/fondo1.jpeg');
+    background-attachment: fixed;
+}
+.cont-form{
+    margin:5% 15% 5% 15%;
+    background-color: #052433da;
+    padding: 3%;
+    border-radius: 15px;
+}
+.col-4, .col-6{
+    margin-bottom: 2%;
+}
+label{
+    color:#36C6E3;
 }

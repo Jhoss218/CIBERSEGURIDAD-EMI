@@ -34,7 +34,7 @@
                 <a class="nav-item nav-link" href="#patrocinador"><h6>AUSPICIAN</h6></a>
                 
                 <a class="nav-item nav-link" href="#contacto"><h6>CONTACTO</h6></a>
-                <li><a href="index.php #formulario"><input type="button" class="boton1" data-bs-toggle="modal" data-bs-target="#formulario" value="INSCRIBIRSE"></a></li>
+                <li><a href="inscripcion"><input type="button" class="boton1" value="INSCRIBIRSE"></a></li>
             </ul>
         </div>
       </div>
@@ -223,7 +223,7 @@
                         <div class="col-5">
                             <img src="imagenes/call.jpeg" alt="" height="350" width="350" class="img-fluid rounded-circle">
                         </div>
-                        <div class="col-6">
+                        <div class="col-7">
                             <div class="row justify-content-start">
                                 <div class="col-8 colf">
                                     <div class="row text-center">
@@ -742,7 +742,7 @@
                         <div class="col-3">
                             <img src="imagenes/logo.png" height="20%" class="img-fluid" alt="">
                         </div>
-                        <div class="col-4">
+                        <div class="col-5">
                             <h5><strong> <img src="imagenes/icono/gmail.png" alt="" width="30"> Email: </strong>infocongreso@adm.emi.edu.bo</h5>
                             <h5><strong> <img src="imagenes/icono/gmail.png" alt="" width="30"> Email:</strong>papercongreso@adm.emi.edu.bo</h5>
                             

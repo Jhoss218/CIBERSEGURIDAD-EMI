@@ -13,5 +13,5 @@ class Pais extends Model
 
     protected $fillable = [
         'pais'
-    ];
+    ]; 
 }

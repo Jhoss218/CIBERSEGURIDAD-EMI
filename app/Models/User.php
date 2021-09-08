@@ -22,7 +22,6 @@ class User extends Authenticatable
         'paterno',
         'materno',
         'email',
-        'email_verified_at',
         'ano_nacimiento',
         'password',
         'universidad',

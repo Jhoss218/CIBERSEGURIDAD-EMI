@@ -2,50 +2,65 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Horario;
+use App\Models\Ciudad;
+use App\Models\Pais;
+use App\Models\User;
+use App\Models\Kardex;
+use App\Models\Carrera;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 class InscripcionController extends Controller
 {
+    public function __invoke()
+    {
+        return view('inicio');
+    }
+    public function create(){
+        $pais = Pais::all();
+        $ciudad = Ciudad::all();
+        $carrera = Carrera::all();
+        $sql = "SELECT taller, encargado, cupo, inicio, fin, horarios.id FROM talleres, horarios WHERE talleres.id = horarios.taller_id";
+        $horarios = DB::select($sql);
+        return view('formulario', compact('pais', 'ciudad', 'carrera', 'horarios'));
+    }
     public function storeKardex(Request $request)
     {
-        $this->validate($request, [
-            'nombres'           => 'required',
-            'paterno'           => 'nullable|max:100',
-            'materno'           => 'nullable|max:100',
-            'email'             => 'required|unique:users,email|email|max:250',
-            'ano_nacimiento'    => 'required|numeric|min:1950|max:2020',
-            'universidad'       => 'nullable|max:250',
-            'telefono'          => 'nullable|numeric|min:0|max:99999999999',
-            'genero'            => [
-                'required',
-                Rule::in(['Masculino', 'Femenino'])
-            ],
-            'ciudad_id'         => 'required|exists:ciudades,id',
-            'pais_id'           => 'required|exists:paises,id',
-            'carrera_id'        => 'nullable|exists:carreras,id',
-            'horario_id'        => 'required|array',
-            'horario_id.*'      => 'required|exists:horarios,id'
+        $request->validate([
+            'nombres'   => 'required|max:250',
+            'paterno'   => 'nullable|max:250',
+            'materno'   => 'nullable|max:250',
+            'ano_nacimiento' => 'nullable|numeric|min:1950|max:2020',
+            'genero'    => 'required',
+            'telefono'  => 'nullable|max:15',
+            'email'     => 'required|email|unique:users,email',
+            'universidad' => 'nullable|max:200',
+            'carrera_id' => 'nullable|exists:carreras,id',
+            'pais_id'   => 'nullable|exists:paises,id',
+            'ciudad_id' => 'nullable|exists:ciudades,id'
         ]);
 
+        $usuario = new User();
+        $usuario->password = bcrypt($request->nombres.$request->email);
+        $usuario->nombres = $request->nombres;
+        $usuario->paterno = $request->paterno;
+        $usuario->materno = $request->materno;
+        $usuario->ano_nacimiento = $request->ano_nacimiento;
+        $usuario->genero = $request->genero;
+        $usuario->telefono = $request->telefono;
+        $usuario->email = $request->email;
+        $usuario->universidad = $request->universidad;
+        $usuario->carrera_id = $request->carrera_id;
+        $usuario->pais_id = $request->pais_id;
+        $usuario->ciudad_id = $request->ciudad_id;
+        $usuario->save();
 
+        $kardex1 = new Kardex;
+        $kardex1->user_id = $usuario->id;
+        $kardex1->horario_id = $request->taller1;
+        $kardex1->save();
 
-        return response()->json([
-            'data'  => 'exito'
-        ]);
-    }
-
-    public function getHorarios()
-    {
-        return response()->json([
-            'data'  => Horario::join('talleres', 'talleres.id', '=', 'horarios.taller_id')
-                ->select('taller', 'encargado', 'cupo', 'inicio', 'fin')
-                ->orderBy('taller')
-                ->orderBy('encargado')
-                ->orderBy('inicio')
-                ->orderBy('fin')
-                ->get()
-        ]);
+        return "Se guardo los datos, su contrasena es: '" . $usuario->nombres . $usuario->email . "'";
     }
 }
