@@ -55,12 +55,10 @@ class InscripcionController extends Controller
         $usuario->pais_id = $request->pais_id;
         $usuario->ciudad_id = $request->ciudad_id;
         $usuario->save();
-
         $kardex1 = new Kardex;
         $kardex1->user_id = $usuario->id;
         $kardex1->horario_id = $request->taller1;
         $kardex1->save();
-
         return "Se guardo los datos, su contrasena es: '" . $usuario->nombres . $usuario->email . "'";
     }
 }
