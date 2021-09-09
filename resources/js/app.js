@@ -27,4 +27,3 @@ Vue.component('example', require('./components/ExampleComponent.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./pais');

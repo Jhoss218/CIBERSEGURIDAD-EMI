@@ -7,9 +7,11 @@ use App\Models\Pais;
 use App\Models\User;
 use App\Models\Kardex;
 use App\Models\Carrera;
+use App\Models\Taller;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
+use LengthException;
 
 class InscripcionController extends Controller
 {
@@ -26,8 +28,10 @@ class InscripcionController extends Controller
         return view('formulario', compact('pais', 'ciudad', 'carrera', 'horarios'));
     }
     public function storeKardex(Request $request)
-    {
+    {   
+       
         $request->validate([
+           
             'nombres'   => 'required|max:250',
             'paterno'   => 'nullable|max:250',
             'materno'   => 'nullable|max:250',
@@ -39,8 +43,9 @@ class InscripcionController extends Controller
             'carrera_id' => 'nullable|exists:carreras,id',
             'pais_id'   => 'nullable|exists:paises,id',
             'ciudad_id' => 'nullable|exists:ciudades,id'
+            
         ]);
-
+      
         $usuario = new User();
         $usuario->password = bcrypt($request->nombres.$request->email);
         $usuario->nombres = $request->nombres;
@@ -55,10 +60,19 @@ class InscripcionController extends Controller
         $usuario->pais_id = $request->pais_id;
         $usuario->ciudad_id = $request->ciudad_id;
         $usuario->save();
-        $kardex1 = new Kardex;
-        $kardex1->user_id = $usuario->id;
-        $kardex1->horario_id = $request->taller1;
-        $kardex1->save();
-        return "Se guardo los datos, su contrasena es: '" . $usuario->nombres . $usuario->email . "'";
+
+        for($x = 0; $x < count($request->taller); $x++){
+            $kardex1 = new Kardex;
+            $kardex1->user_id = $usuario->id;
+            $kardex1->horario_id = $request->taller[$x];
+            $kardex1->save();
+
+
+
+            $cupo = Taller::where('id', '=', $request->taller[$x]);
+            $Ecupo = $cupo -1;
+            Taller::where('id', '=', $request->taller[$x])->update($Ecupo-1);
+        }
+        return view('/');
     }
 }
